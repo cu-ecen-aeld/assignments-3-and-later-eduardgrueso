@@ -58,6 +58,7 @@ int main (int argc, char *argv[]) {
     USER_LOG_INFO ("Writing %s to %s)", message, filename);
 
     fclose(file_to_write);
+    closelog();
 
     return 0;
 
