@@ -50,9 +50,9 @@ then
 fi
 #echo "Removing the old writer utility and compiling as a native application"
 # clean previous build
-make clean
-# compile the code
-make
+# make clean
+# # compile the code
+# make
 
 if [ $? -ne 0 ]
 then
