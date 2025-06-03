@@ -156,8 +156,9 @@ cp ${FINDER_APP_DIR}/finder-test.sh home/
 cp ${FINDER_APP_DIR}/finder.sh home/
 cp ${FINDER_APP_DIR}/writer home/
 cp ${FINDER_APP_DIR}/autorun-qemu.sh home/
-cp ${FINDER_APP_DIR}/conf/assignment.txt conf/
-cp ${FINDER_APP_DIR}/conf/username.txt conf/
+mkdir -p home/conf
+cp ${FINDER_APP_DIR}/conf/assignment.txt home/conf/
+cp ${FINDER_APP_DIR}/conf/username.txt home/conf/
 
 # TODO: Chown the root directory
 
@@ -166,8 +167,8 @@ sudo chown -R root:root ${OUTDIR}/rootfs
 # TODO: Create initramfs.cpio.gz
 
 cd "${OUTDIR}/rootfs"
-find . | cpio -H newc -ov --owner root:root > $OUTDIR/initramfs.cpio
-gzip -f $OUTDIR/initramfs.cpio
+find . | cpio -H newc -ov --owner root:root > ${OUTDIR}/initramfs.cpio
+gzip -f ${OUTDIR}/initramfs.cpio
 
 if [ ! -e "${OUTDIR}/initramfs.cpio.gz" ]; then
     echo "Failed to create initramfs.cpio.gz"
