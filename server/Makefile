@@ -1,14 +1,17 @@
 CROSS_COMPILE ?=aarch64-none-linux-gnu-
-CC ?= $(CROSS_COMPILE)gcc
-CFLAGS=-Wall -Werror -Wextra -g
+CC = $(CROSS_COMPILE)gcc
+CFLAGS=-Wall -Wextra -g
 TARGET=aesdsocket
+SRC=aesdsocket.c
+
+.PHONY: all clean
 
 all: $(TARGET)
 
 default: all
 
-$(TARGET): aesdsocket.c
-	$(CC) $(CFLAGS) aesdsocket.c -o $(TARGET)
+$(TARGET): $(SRC)
+	$(CC) $(CFLAGS) -o $(TARGET) $(SRC)
 
 clean:
-	rm -f $(TARGET)
+	rm -f $(TARGET) *.o
