@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <pthread.h>
+#include <stdbool.h>
 
 // Optional: use these functions to add debug or error prints to your application
 #define DEBUG_LOG(msg,...)
