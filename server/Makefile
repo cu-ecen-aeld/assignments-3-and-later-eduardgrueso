@@ -1,6 +1,6 @@
 CROSS_COMPILE ?=aarch64-none-linux-gnu-
 CC ?= $(CROSS_COMPILE)gcc
-CFLAGS=-Wall -Werror
+CFLAGS=-Wall -Werror -Wextra -g
 TARGET=aesdsocket
 
 all: $(TARGET)
