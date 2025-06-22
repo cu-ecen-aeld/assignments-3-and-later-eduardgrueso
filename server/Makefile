@@ -1,6 +1,7 @@
 #CROSS_COMPILE ?=aarch64-none-linux-gnu-
-CC = $(CROSS_COMPILE)gcc
-CFLAGS=-Wall -Wextra -g
+CC ?= gcc
+CFLAGS ?= -Wall -Wextra -g
+LDFLAGS ?=
 TARGET=aesdsocket
 SRC=aesdsocket.c
 
@@ -11,7 +12,7 @@ all: $(TARGET)
 default: all
 
 $(TARGET): $(SRC)
-	$(CC) $(CFLAGS) -o $(TARGET) $(SRC)
+	$(CC) $(CFLAGS) -o $(TARGET) $(SRC) $(LDFLAGS)
 
 clean:
 	rm -f $(TARGET) *.o
