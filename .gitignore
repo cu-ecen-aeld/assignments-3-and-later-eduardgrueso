@@ -10,3 +10,7 @@ actions-runner/
 aesdsocket
 server/aesdsocket
 server/valgrind-out.txt
+
+
+#*.tar.gz filter=lfs diff=lfs merge=lfs -text
+#*.bin filter=lfs diff=lfs merge=lfs -text
